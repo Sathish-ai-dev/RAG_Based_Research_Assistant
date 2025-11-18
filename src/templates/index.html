@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research RAG Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <div>
+          <h1>Research RAG Assistant</h1>
+          <p class="status-line" id="status">
+            Ask specific research questions to get grounded answers.
+          </p>
+        </div>
+        <span class="badge">Context aware</span>
+      </header>
+
+      <main>
+        <section class="panel chat-panel">
+          <form class="upload-form" id="upload-form">
+            <label class="upload-label">
+              <input type="file" id="document-file" name="document" accept=".txt" />
+              <span>Select .txt research file</span>
+            </label>
+            <button type="submit" id="upload-btn">Upload</button>
+          </form>
+          <p class="upload-status" id="upload-status">
+            Upload plain-text research notes to expand the assistant's knowledge.
+          </p>
+
+          <div class="messages" id="messages"></div>
+          <form class="chat-input" id="chat-form">
+            <textarea
+              id="question"
+              name="question"
+              placeholder="Type your research question and press Enter to send"
+              required
+            ></textarea>
+            <button type="submit" id="submit-btn">Send</button>
+          </form>
+          <p class="enter-hint">Tip: press Enter to send, Shift + Enter for a new line.</p>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js" type="module"></script>
+  </body>
+</html>
+
